@@ -20,16 +20,30 @@ public class Es1 {
 
     }
 
-    public void modifyArray(java.util.Scanner sc){
-        while (myArray.length < 5){
+   public void modifyArray(java.util.Scanner sc){
+        while (true){
             System.out.println("Inserisci un numero che vuoi mettere nel tuo array");
-
             int nuovoNum = sc.nextInt();
-            System.out.println("hai inserito " + nuovoNum);
-            System.out.println("Inserisci in che posizione (1 a 5)");
-            int nuovaPos = sc.nextInt();
-            System.out.println("hai scelto la posizione numero " + nuovaPos);
-            myArray[nuovaPos -1] = nuovoNum;
+            if (nuovoNum>=1 && nuovoNum<= 10){
+                sc.nextLine();
+                System.out.println("hai inserito " + nuovoNum);
+                System.out.println("Inserisci in che posizione (1 a 5)");
+               int nuovaPos = sc.nextInt();
+                sc.nextLine();
+                if (nuovaPos >= 1 && nuovaPos<=5) {
+                    System.out.println("hai scelto la posizione numero " + nuovaPos);
+                    myArray[nuovaPos - 1] = nuovoNum;
+                }else {
+                    System.out.println("per favore seleziona un numero tra 1 e 5");
+                }
+                System.out.println("Array modificato: " + Arrays.toString((myArray)));
+            } else if (nuovoNum == 0) {
+                System.out.println("sei uscito correttamente dal programma");
+                break;
+            }else {
+                System.out.println("seleziona un valore valido");
+            }
+
         }
 
     }

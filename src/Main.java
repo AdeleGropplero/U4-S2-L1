@@ -1,3 +1,7 @@
+import es3.BancaException;
+import es3.ContoCorrente;
+import es3.ContoOnline;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -10,5 +14,22 @@ public class Main {
         es1.fillArray();
         es1.modifyArray(sc);
 
+
+        ContoCorrente cc = new ContoCorrente("gianni", 20);
+        ContoOnline co = new ContoOnline("giannetta", 50, 150);
+        try {
+            cc.preleva(60);
+        } catch (BancaException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        try {
+            co.preleva(200);
+        } catch (BancaException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+
     }
+
 }
