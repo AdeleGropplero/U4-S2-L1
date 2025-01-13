@@ -16,7 +16,7 @@ public class Main {
 
 
         ContoCorrente cc = new ContoCorrente("gianni", 20);
-        ContoOnline co = new ContoOnline("giannetta", 50, 150);
+        ContoOnline co = new ContoOnline("giannetto", 50, 150);
         try {
             cc.preleva(60);
         } catch (BancaException exception) {
